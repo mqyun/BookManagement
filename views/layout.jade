@@ -1,0 +1,52 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title= title
+    link(rel="icon" href="/public/favicon.png" type="image/x-icon")
+    link(href='/sui/css/sui.min.css', rel='stylesheet')
+    link(href='/public/css/public.css', rel='stylesheet')
+    link(href='/bookmanage/css/style.css', rel='stylesheet')
+    script(src='/public/js/jquery.min.js')
+    script(src='/sui/js/sui.min.js')
+    script(src='/public/js/sweetalert.min.js')
+    block css
+  body
+    mixin mainnav(navtit)
+      .sui-navbar.navbar-inverse
+        .navbar-inner.style-navbar-inner
+          .sui-container
+            a.sui-brand(href='javascript:;') #{navtit}
+            ul.sui-nav
+              li.active
+                a(href='javascript:;') 首页
+              li
+                a(href='javascript:;') 分类查看
+              li.sui-dropdown
+                a.dropdown-toggle(href='javascript:void(0);', data-toggle='dropdown')
+                  | 书籍
+                  i.caret
+                ul.sui-dropdown-menu(role='menu')
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='javascript:;') 借书
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='javascript:;') 还书
+            ul.sui-nav.pull-right
+              li.sui-dropdown
+                a.dropdown-toggle(href='javascript:void(0);', data-toggle='dropdown')
+                  | 欢迎你，#{name}
+                  i.caret
+                ul.sui-dropdown-menu(role='menu')
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='javascript:;') 退出登录
+    // 导航
+    block nav
+    // 内容
+    block content
+    // 页脚
+    block footer
+
+  script(src='/public/js/public.js')
+  block js
